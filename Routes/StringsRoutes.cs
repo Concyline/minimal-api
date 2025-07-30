@@ -11,14 +11,14 @@
             var group = app.MapGroup("/itens");
 
             // GET - Todos
-            group.MapGet("/itens", () =>
+            group.MapGet("/", () =>
             {
                 var lista = StringService.CarregarLista();
                 return Results.Ok(lista);
             });
 
             // GET - Por índice
-            group.MapGet("/itens/{id:int}", (int id) =>
+            group.MapGet("/{id:int}", (int id) =>
             {
                 var lista = StringService.CarregarLista();
                 if (id < 0 || id >= lista.Count)
@@ -27,7 +27,7 @@
                 return Results.Ok(lista[id]);
             });
 
-            group.MapPost("/itens", async (StringRequest req) =>
+            group.MapPost("/", async (StringRequest req) =>
             {
                 if (string.IsNullOrWhiteSpace(req.Valor))
                     return Results.BadRequest("Texto inválido");
@@ -41,7 +41,7 @@
 
 
             // DELETE - Remover
-            group.MapDelete("/itens/{id:int}", (int id) =>
+            group.MapDelete("/{id:int}", (int id) =>
             {
                 var lista = StringService.CarregarLista();
                 if (id < 0 || id >= lista.Count)

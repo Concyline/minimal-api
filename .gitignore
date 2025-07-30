@@ -1,61 +1,53 @@
-# Build e publicações
+# 🧱 Diretórios de build
 bin/
 obj/
 publish/
 out/
 
-# Usuário e IDE
+# 🧠 IDEs (Visual Studio, VSCode, Rider)
 .vscode/
+.idea/
 *.user
 *.suo
 *.userosscache
 *.sln.docstates
-
-# Visual Studio
-.vs/
+*.sln.iml
 *.csproj.user
 *.dbmdl
 
-# Rider
-.idea/
-*.sln.iml
-
-# Dotnet secrets
+# 🔐 Segredos e certificados (evite subir dados sensíveis)
 secrets.json
-
-# Arquivos do sistema
-.DS_Store
-Thumbs.db
-
-# Logs
-*.log
-
-# Config do Windows
-desktop.ini
-
-# Arquivos temporários
-*.tmp
-*.temp
-
-# Configuração local
-*.swp
-*.lock
-*.pid
-
-# Certificados de dev
 *.pfx
 *.key
 *.cer
 
-# Testes
+# 🧪 Testes
 TestResults/
 coverage/
 *.coverage
 
-# Docker (se usar)
-docker-compose.override.yml
-.env
+# 🖥 Arquivos de sistema
+.DS_Store
+Thumbs.db
+desktop.ini
 
-# Node.js (caso use frontend junto)
+# ⚠️ Temporários
+*.tmp
+*.temp
+*.swp
+*.lock
+*.pid
+
+# 📦 Node.js (se tiver front junto)
 node_modules/
 dist/
+
+# 🐳 Docker (deixe o Dockerfile!)
+docker-compose.override.yml
+# docker-compose.yml  ← descomente se não usar
+
+# ✅ Inclui Dockerfile e docker-compose.yml
+!Dockerfile
+!docker-compose.yml
+
+.vs/

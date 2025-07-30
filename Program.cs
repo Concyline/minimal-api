@@ -21,5 +21,7 @@ app.MapGet("/", () =>
 })
 .WithName("GetWeatherForecast");
 
+app.Urls.Add("http://+:80");
+
 app.Run();
 
